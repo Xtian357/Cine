@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEMA-ONE - Movies & Series</title>
+     <link rel="icon" type="image/svg+xml" href="public/images/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                    <line x1="7" y1="2" x2="7" y2="22"></line>
+                    <line x1="17" y1="2" x2="17" y2="22"></line>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <line x1="2" y1="7" x2="7" y2="7"></line>
+                    <line x1="2" y1="17" x2="7" y2="17"></line>
+                    <line x1="17" y1="17" x2="22" y2="17"></line>
+                    <line x1="17" y1="7" x2="22" y2="7"></line>
+                </svg>
+                <span class="logo-text">CINEMA-ONE</span>
+            </div>
+
+            <!-- Nav on the RIGHT -->
+            <div class="nav-links">
+                <button class="nav-link active" data-tab="home">Home</button>
+                <button class="nav-link" data-tab="movies">Movies</button>
+                <button class="nav-link" data-tab="series">Series</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Featured Section -->
+    <section id="featured-section" class="featured-section">
+        <!-- defaulting to Black Panther poster file (change path if needed) -->
+        <img id="featured-poster" class="featured-image" src="public/images/black-panther.jpg" alt="Featured Movie">
+        <div class="featured-overlay"></div>
+
+        <!-- moved LEFT and made smaller -->
+        <div class="featured-content-left">
+            <h1 id="featured-title" class="featured-title"></h1>
+            <div class="featured-meta">
+                <span id="featured-year" class="featured-year"></span>
+                <div class="featured-rating">
+                    <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span id="featured-rating"></span>
+                </div>
+            </div>
+            <p id="featured-description" class="featured-description"></p>
+            <a id="featured-watch" class="watch-btn" href="" target="_blank">Watch Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content container">
+        <section id="top-movies-section" class="content-section">
+            <h2 class="section-title">Top Movies</h2>
+            <div id="top-movies" class="movie-grid"></div>
+        </section>
+
+        <section id="top-series-section" class="content-section">
+            <h2 class="section-title">Top Series</h2>
+            <div id="top-series" class="movie-grid"></div>
+        </section>
+
+        <section id="all-content-section" class="content-section">
+            <h2 class="section-title">Trending Now</h2>
+            <div id="all-content" class="movie-grid"></div>
+        </section>
+
+        <section id="movies-only-section" class="content-section" style="display: none;">
+            <h2 class="section-title">All Movies</h2>
+            <div id="movies-only" class="movie-grid"></div>
+        </section>
+
+        <section id="series-only-section" class="content-section" style="display: none;">
+            <h2 class="section-title">All Series</h2>
+            <div id="series-only" class="movie-grid"></div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                    <line x1="7" y1="2" x2="7" y2="22"></line>
+                    <line x1="17" y1="2" x2="17" y2="22"></line>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                </svg>
+                <span class="logo-text">CINEMA-ONE</span>
+            </div>
+            <p class="footer-text">© 2024 CINEMA-ONE. All rights reserved.</p>
+            <p class="footer-subtext">Your ultimate destination for movies and series</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body">
+                <img id="modal-poster" class="modal-poster" src="" alt="">
+                <div class="modal-info">
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <div class="modal-meta">
+                        <div class="modal-rating">
+                            <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <span id="modal-rating"></span>
+                        </div>
+                        <div class="modal-year">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <span id="modal-year"></span>
+                        </div>
+                        <div class="modal-type">
+                            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                                <line x1="7" y1="2" x2="7" y2="22"></line>
+                                <line x1="17" y1="2" x2="17" y2="22"></line>
+                            </svg>
+                            <span id="modal-type"></span>
+                        </div>
+                    </div>
+                    <div class="modal-detail">
+                        <h3 class="detail-label">Genre</h3>
+                        <p id="modal-genre" class="detail-text"></p>
+                    </div>
+                    <div class="modal-detail">
+                        <h3 class="detail-label">Cast</h3>
+                        <p id="modal-cast" class="detail-text"></p>
+                    </div>
+                    <div class="modal-detail">
+                        <h3 class="detail-label">Description</h3>
+                        <p id="modal-description" class="detail-text"></p>
+                    </div>
+                    <a id="modal-watch" class="watch-btn" href="" target="_blank">Watch Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
